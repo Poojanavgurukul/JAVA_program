@@ -1,18 +1,19 @@
+import java.sql.SQLOutput;
 import  java.util.Scanner;
 public class octal_number {
     public  static void main(String args[]){
         Scanner input=new Scanner(System.in);
         System.out.print("Enter an integer: ");
-        int number = input.nextInt();
-        System.out.println("You entered " + number);
+        int userNumber = input.nextInt();
+        System.out.println("You entered " + userNumber);
         int i=0,decimal=0,remainder;
-        while(number !=0){
-            remainder= getRemainder(number);
+        while(userNumber !=0){
+            remainder= getRemainder(userNumber);
             System.out.println(remainder);
-            number= getQuoitent(number);
+            userNumber= getQuoitent(userNumber);
+            System.out.println(userNumber);
         }
     }
-
     private static int getQuoitent(int number) {
         return number/10;
     }
