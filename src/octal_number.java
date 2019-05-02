@@ -1,11 +1,7 @@
-import java.sql.SQLOutput;
-import  java.util.Scanner;
+
 public class octal_number {
     public  static void main(String args[]){
-        Scanner input=new Scanner(System.in);
-        System.out.print("Enter an integer: ");
-        int userNumber = input.nextInt();
-        System.out.println("You entered " + userNumber);
+        int userNumber = Integer.parseInt(args[0]);
         int i=0,decimal=0,remainder;
         while(userNumber !=0){
             remainder= getRemainder(userNumber);
