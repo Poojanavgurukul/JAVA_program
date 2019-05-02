@@ -1,0 +1,2 @@
+1.put in the gitignore
+2.automate the testing of program
