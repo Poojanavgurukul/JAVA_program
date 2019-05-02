@@ -1,6 +1,4 @@
-import java.sql.SQLOutput;
-
-public class octal_number {
+public class octal_number_to_decimal{
     public  static void main(String args[]){
         int userNumber = Integer.parseInt(args[0]);
         int i=0,decimal=0,remainder,exponent=8;
@@ -8,9 +6,9 @@ public class octal_number {
             remainder= getRemainder(userNumber);
             userNumber= getQuoitent(userNumber);
             decimal+=remainder*((int)(Math.pow(exponent,i)));
-            System.out.println(decimal);
             i++;
         }
+        System.out.println(decimal);
     }
     private static int getQuoitent(int number) {
         return number/10;
