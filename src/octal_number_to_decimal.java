@@ -2,13 +2,23 @@ public class octal_number_to_decimal{
     public  static void main(String args[]){
         int userNumber = Integer.parseInt(args[0]);
         int i=0,decimal=0,remainder,exponent=8;
+        boolean isNotDecimal=true;
         while(userNumber !=0){
             remainder= getRemainder(userNumber);
-            userNumber= getQuoitent(userNumber);
-            decimal+=remainder*((int)(Math.pow(exponent,i)));
-            i++;
+            if(remainder>7){
+                isNotDecimal=false;
+                System.out.println("number is not octal");
+                break;
+            }
+            else {
+                userNumber = getQuoitent(userNumber);
+                decimal += remainder * ((int) (Math.pow(exponent, i)));
+                i++;
+            }
         }
-        System.out.println(decimal);
+        if (isNotDecimal==true) {
+            System.out.println(decimal);
+        }
     }
     private static int getQuoitent(int number) {
         return number/10;
