@@ -7,17 +7,14 @@ public class OctalToDecimalConverter {
             return;
         }
         int number = Integer.parseInt(args[0]);
-        int i = 0, decimal = 0, remainder, exponent = 8;
-        System.out.println(getDigit(number));
-        while (number != 0) {
-            remainder = getRemainder(number);
-            number = getQuoitent(number);
-            decimal += remainder * ((int) (Math.pow(exponent, i)));
+        int i=0,decimal = 0, remainder, exponent = 8;
+        for(Integer digit :getDigit(number)){
+            decimal += digit * ((int) (Math.pow(exponent, i)));
             i++;
         }
         System.out.println(decimal);
     }
-    private static List getDigit(int userNumber) {
+    private static List<Integer> getDigit(int userNumber) {
         ArrayList<Integer> list = new ArrayList<Integer>();
         while (userNumber != 0) {
             int remainder = getRemainder(userNumber);
