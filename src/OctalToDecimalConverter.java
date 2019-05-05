@@ -4,7 +4,8 @@ public class OctalToDecimalConverter {
         String[] number =userNumber.split("");
         int i=0;
         for (int j =number.length; j>0 ; j--) {
-            System.out.println(number[j-1]);
+            int octalNumber=Integer.parseInt(number[j-1]);
+            System.out.println(octalNumber);
         }
     }
 }
