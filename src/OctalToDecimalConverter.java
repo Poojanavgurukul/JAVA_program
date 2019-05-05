@@ -1,7 +1,7 @@
 public class OctalToDecimalConverter {
     public  static void main(String args[]){
         String number=args[0];
-        boolean isNotOctal=number.contains("8")||number.contains("9");
+        boolean isNotOctal = isNotOctal(number);
         if(isNotOctal){
             System.out.println("number is not octal");
             return;
@@ -17,6 +17,11 @@ public class OctalToDecimalConverter {
         System.out.println(decimal);
 
     }
+
+    private static boolean isNotOctal(String number) {
+        return number.contains("8")||number.contains("9");
+    }
+
     private static int getQuoitent(int number) {
         return number/10;
     }
