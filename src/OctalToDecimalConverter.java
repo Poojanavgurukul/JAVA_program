@@ -1,24 +1,30 @@
 public class OctalToDecimalConverter {
-    public static void main(String args[]) {
-        String userNumber = args[0];
-        String[] number =userNumber.split("");
-        int i=0,decimal=0,exponent=8;
-        boolean isOctalNumber=true;
-        for (int j =number.length; j>0 ; j--) {
-            int octalNumber=Integer.parseInt(number[j-1]);
-            if(octalNumber>7){
-                isOctalNumber=false;
+    public  static void main(String args[]){
+        int userNumber = Integer.parseInt(args[0]);
+        int i=0,decimal=0,remainder,exponent=8;
+        boolean isNotDecimal=true;
+        while(userNumber !=0){
+            remainder= getRemainder(userNumber);
+            if(remainder>7){
+                isNotDecimal=false;
                 System.out.println("number is not octal");
                 break;
             }
-            else{
-                decimal+=octalNumber*((int)(Math.pow(exponent,i)));
+            else {
+                userNumber = getQuoitent(userNumber);
+                decimal += remainder * ((int) (Math.pow(exponent, i)));
+                i++;
             }
-            i++;
         }
-        if(isOctalNumber==true){
+        if (isNotDecimal==true) {
             System.out.println(decimal);
         }
+    }
+    private static int getQuoitent(int number) {
+        return number/10;
+    }
 
+    private static int getRemainder(int number) {
+        return number%10;
     }
 }
