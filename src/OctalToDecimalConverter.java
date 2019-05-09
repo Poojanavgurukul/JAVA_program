@@ -6,15 +6,15 @@ public class OctalToDecimalConverter {
             System.out.println("number is not octal");
             return;
         }
-        int number = Integer.parseInt(args[0]);
-        int i=0,decimal = 0, remainder, exponent = 8;
-        for(Integer digit :getDigit(number)){
+        int i=0,decimal = 0, exponent = 8;
+        for(Integer digit :getDigit(args[0])){
             decimal += digit * ((int) (Math.pow(exponent, i)));
             i++;
         }
         System.out.println(decimal);
     }
-    private static List<Integer> getDigit(int userNumber) {
+    private static List<Integer> getDigit(String Number) {
+        int userNumber=Integer.parseInt(Number);
         ArrayList<Integer> list = new ArrayList<Integer>();
         while (userNumber != 0) {
             int remainder = getRemainder(userNumber);
