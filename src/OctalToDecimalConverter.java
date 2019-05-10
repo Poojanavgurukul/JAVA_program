@@ -7,12 +7,11 @@ public class OctalToDecimalConverter {
             System.out.println("number is not octal");
             return;
         }
-        int decimal = 0;
-        decimal=getDotProduts(getDigit(args[0]),getPowersOfEight(length));
+        int decimal= getDotProdut(getDigits(args[0]),getPowersOfEight(length));
         System.out.println(decimal);
     }
 
-    private static List<Integer> getDigit(String Number) {
+    private static List<Integer> getDigits(String Number) {
         int userNumber=Integer.parseInt(Number);
         ArrayList<Integer> list = new ArrayList<Integer>();
         while (userNumber != 0) {
@@ -22,12 +21,13 @@ public class OctalToDecimalConverter {
         }
         return list;
     }
-    private static int getDotProduts(List<Integer> digit,List<Integer> powersOfEight){
-        int dotProducts=0;
-        for (int i = 0; i <digit.size() ; i++) {
-            dotProducts+=digit.get(i)*powersOfEight.get(i);
+    private static int getDotProdut(List<Integer> digit, List<Integer> powersOfEight){
+        int dotProduct=0,j=0;
+        while(j<digit.size()){
+            dotProduct+=digit.get(j)*powersOfEight.get(j);
+            j++;
         }
-        return dotProducts;
+        return dotProduct;
     }
     private static List<Integer>getPowersOfEight(int length){
         ArrayList<Integer>listOfPowersOfEight=new ArrayList<Integer>();
@@ -43,7 +43,6 @@ public class OctalToDecimalConverter {
     private static boolean isNotOctal(String number) {
         return number.contains("8")||number.contains("9");
     }
-
     private static int getQuoitent(int number) {
         return number/10;
     }
