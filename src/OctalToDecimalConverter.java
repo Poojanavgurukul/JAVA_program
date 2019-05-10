@@ -7,12 +7,13 @@ public class OctalToDecimalConverter {
             System.out.println("number is not octal");
             return;
         }
-        int decimal = 0;
+        int decimal = 0,exponent=8,i=0;
         for(Integer digit :getDigit(args[0])){
-            decimal += digit;
+            decimal += digit*((int)(Math.pow(exponent,i)));
+            i++;
         }
         System.out.println(decimal);
-        System.out.println(getPowersOfEight(length));
+        System.out.println(getDotProduts(getDigit(args[0]),getPowersOfEight(length)));
     }
 
     private static List<Integer> getDigit(String Number) {
@@ -24,6 +25,14 @@ public class OctalToDecimalConverter {
             list.add(remainder);
         }
         return list;
+    }
+    private static List<Integer>getDotProduts(List<Integer> digit,List<Integer> powersOfEight){
+        ArrayList<Integer>dotProducts=new ArrayList<Integer>();
+        for (int i = 0; i <digit.size() ; i++) {
+            int product=digit.get(i)*powersOfEight.get(i);
+            dotProducts.add(product);
+        }
+        return dotProducts;
     }
     private static List<Integer>getPowersOfEight(int length){
         ArrayList<Integer>listOfPowersOfEight=new ArrayList<Integer>();
