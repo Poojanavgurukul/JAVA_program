@@ -12,12 +12,12 @@ public class OctalToDecimalConverter {
     }
 
     private static List<Integer> getDigits(String Number) {
-        int userNumber=Integer.parseInt(Number);
+        String[] userNumber=Number.split("");
         ArrayList<Integer> list = new ArrayList<Integer>();
-        while (userNumber != 0) {
-            int remainder = getRemainder(userNumber);
-            userNumber = getQuoitent(userNumber);
-            list.add(remainder);
+        int i=userNumber.length;
+        while(i>0){
+            list.add(Integer.valueOf(userNumber[i-1]));
+            i--;
         }
         return list;
     }
@@ -39,15 +39,7 @@ public class OctalToDecimalConverter {
         }
         return listOfPowersOfEight;
     }
-
     private static boolean isNotOctal(String number) {
         return number.contains("8")||number.contains("9");
-    }
-    private static int getQuoitent(int number) {
-        return number/10;
-    }
-
-    private static int getRemainder(int number) {
-        return number%10;
     }
 }
