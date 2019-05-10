@@ -7,13 +7,11 @@ public class OctalToDecimalConverter {
             System.out.println("number is not octal");
             return;
         }
-        int decimal = 0,exponent=8,i=0;
-        for(Integer digit :getDigit(args[0])){
-            decimal += digit*((int)(Math.pow(exponent,i)));
-            i++;
+        int decimal = 0;
+        for(Integer digit :getDotProduts(getDigit(args[0]),getPowersOfEight(length))){
+            decimal += digit;
         }
         System.out.println(decimal);
-        System.out.println(getDotProduts(getDigit(args[0]),getPowersOfEight(length)));
     }
 
     private static List<Integer> getDigit(String Number) {
