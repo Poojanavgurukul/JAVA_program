@@ -8,9 +8,7 @@ public class OctalToDecimalConverter {
             return;
         }
         int decimal = 0;
-        for(Integer digit :getDotProduts(getDigit(args[0]),getPowersOfEight(length))){
-            decimal += digit;
-        }
+        decimal=getDotProduts(getDigit(args[0]),getPowersOfEight(length));
         System.out.println(decimal);
     }
 
@@ -24,11 +22,10 @@ public class OctalToDecimalConverter {
         }
         return list;
     }
-    private static List<Integer>getDotProduts(List<Integer> digit,List<Integer> powersOfEight){
-        ArrayList<Integer>dotProducts=new ArrayList<Integer>();
+    private static int getDotProduts(List<Integer> digit,List<Integer> powersOfEight){
+        int dotProducts=0;
         for (int i = 0; i <digit.size() ; i++) {
-            int product=digit.get(i)*powersOfEight.get(i);
-            dotProducts.add(product);
+            dotProducts+=digit.get(i)*powersOfEight.get(i);
         }
         return dotProducts;
     }
