@@ -8,19 +8,8 @@ public class BaseConverter {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= getDotProdut(getDigits(args[2]), getPowers(length,base));
+        int decimal= getDotProdut(Digit.getDigits(args[2]), getPowers(length,base));
         System.out.println(decimal);
-    }
-
-    private static List<Integer> getDigits(String Number) {
-        String[] userNumber=Number.split("");
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        int i=userNumber.length;
-        while(i>0){
-            list.add(Integer.valueOf(userNumber[i-1]));
-            i--;
-        }
-        return list;
     }
     private static int getDotProdut(List<Integer> digit, List<Integer> powers){
         int dotProduct=0,j=0;
@@ -41,7 +30,7 @@ public class BaseConverter {
         return listOfPowers;
     }
     private static boolean isNotValid(String number,int base) {
-        for (int digit:getDigits(number)) {
+        for (int digit:Digit.getDigits(number)) {
           if(base<=digit){
               return true;
           }
