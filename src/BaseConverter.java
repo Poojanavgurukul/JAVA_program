@@ -1,7 +1,12 @@
+import com.pooja.baseconverter.Digit;
+import com.pooja.baseconverter.DotProduct;
+import com.pooja.baseconverter.GetPower;
+import static java.lang.Integer.parseInt;
+
 public class BaseConverter {
     public static void main(String[] args) {
         String number = args[2];
-        int base=Integer.parseInt(args[1]);
+        int base= parseInt(args[1]);
         int length= number.length();
         if (isNotValid(number,base)) {
             System.out.println("number is not valid");
