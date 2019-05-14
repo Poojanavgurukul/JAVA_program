@@ -1,10 +1,10 @@
 import java.util.*;
-public class baseConverter {
+public class BaseConverter {
     public static void main(String args[]) {
         String number = args[2];
         int base=Integer.parseInt(args[1]);
         int length= number.length();
-        if (isNotOctal(number)) {
+        if (isNotValid(number)) {
             System.out.println("number is not octal");
             return;
         }
@@ -30,17 +30,17 @@ public class baseConverter {
         }
         return dotProduct;
     }
-    private static List<Integer> getPowers(int length,int exponent){
+    private static List<Integer> getPowers(int length,int base){
         ArrayList<Integer>listOfPowers=new ArrayList<Integer>();
         int i=0;
         while(i<length){
-            int power=((int)(Math.pow(exponent,i)));
+            int power=((int)(Math.pow(base,i)));
             listOfPowers.add(power);
             i++;
         }
         return listOfPowers;
     }
-    private static boolean isNotOctal(String number) {
+    private static boolean isNotValid(String number) {
         return number.contains("8")||number.contains("9");
     }
 }
