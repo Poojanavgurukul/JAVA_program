@@ -10,6 +10,7 @@ public class BaseConverter {
         int decimal= DotProduct.getDotProduct(Digit.getDigits(args[2]), GetPower.getPowers(length,base));
         System.out.println(decimal);
     }
+
     private static boolean isNotValid(String number,int base) {
         for (int digit:Digit.getDigits(number)) {
           if(base<=digit){
