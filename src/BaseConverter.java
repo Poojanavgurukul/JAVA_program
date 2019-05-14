@@ -7,7 +7,7 @@ public class BaseConverter {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= DotProduct.getDotProdut(Digit.getDigits(args[2]), GetPower.getPowers(length,base));
+        int decimal= DotProduct.getDotProduct(Digit.getDigits(args[2]), GetPower.getPowers(length,base));
         System.out.println(decimal);
     }
     private static boolean isNotValid(String number,int base) {
