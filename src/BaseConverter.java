@@ -8,17 +8,10 @@ public class BaseConverter {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= getDotProdut(Digit.getDigits(args[2]), getPowers(length,base));
+        int decimal= DotProduct.getDotProdut(Digit.getDigits(args[2]), getPowers(length,base));
         System.out.println(decimal);
     }
-    private static int getDotProdut(List<Integer> digit, List<Integer> powers){
-        int dotProduct=0,j=0;
-        while(j<digit.size()){
-            dotProduct+=digit.get(j)*powers.get(j);
-            j++;
-        }
-        return dotProduct;
-    }
+
     private static List<Integer> getPowers(int length,int base){
         ArrayList<Integer>listOfPowers=new ArrayList<Integer>();
         int i=0;
