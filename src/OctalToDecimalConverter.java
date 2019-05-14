@@ -7,7 +7,7 @@ public class OctalToDecimalConverter {
             System.out.println("number is not octal");
             return;
         }
-        int decimal= getDotProdut(getDigits(args[0]),getPowersOfEight(length));
+        int decimal= getDotProdut(getDigits(args[0]), getPowers(length));
         System.out.println(decimal);
     }
 
@@ -21,23 +21,23 @@ public class OctalToDecimalConverter {
         }
         return list;
     }
-    private static int getDotProdut(List<Integer> digit, List<Integer> powersOfEight){
+    private static int getDotProdut(List<Integer> digit, List<Integer> powers){
         int dotProduct=0,j=0;
         while(j<digit.size()){
-            dotProduct+=digit.get(j)*powersOfEight.get(j);
+            dotProduct+=digit.get(j)*powers.get(j);
             j++;
         }
         return dotProduct;
     }
-    private static List<Integer>getPowersOfEight(int length){
-        ArrayList<Integer>listOfPowersOfEight=new ArrayList<Integer>();
+    private static List<Integer> getPowers(int length){
+        ArrayList<Integer>listOfPowers=new ArrayList<Integer>();
         int i=0,exponent=8;
         while(i<length){
             int power=((int)(Math.pow(exponent,i)));
-            listOfPowersOfEight.add(power);
+            listOfPowers.add(power);
             i++;
         }
-        return listOfPowersOfEight;
+        return listOfPowers;
     }
     private static boolean isNotOctal(String number) {
         return number.contains("8")||number.contains("9");
