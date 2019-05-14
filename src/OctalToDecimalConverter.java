@@ -2,12 +2,13 @@ import java.util.*;
 public class OctalToDecimalConverter {
     public static void main(String args[]) {
         String numberArray = args[0];
+        int expoenent=8;
         int length= numberArray.length();
         if (isNotOctal(numberArray)) {
             System.out.println("number is not octal");
             return;
         }
-        int decimal= getDotProdut(getDigits(args[0]), getPowers(length));
+        int decimal= getDotProdut(getDigits(args[0]), getPowers(length,expoenent));
         System.out.println(decimal);
     }
 
@@ -29,9 +30,9 @@ public class OctalToDecimalConverter {
         }
         return dotProduct;
     }
-    private static List<Integer> getPowers(int length){
+    private static List<Integer> getPowers(int length,int exponent){
         ArrayList<Integer>listOfPowers=new ArrayList<Integer>();
-        int i=0,exponent=8;
+        int i=0;
         while(i<length){
             int power=((int)(Math.pow(exponent,i)));
             listOfPowers.add(power);
