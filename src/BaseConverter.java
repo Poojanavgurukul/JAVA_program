@@ -1,6 +1,5 @@
-import java.util.*;
 public class BaseConverter {
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String number = args[2];
         int base=Integer.parseInt(args[1]);
         int length= number.length();
