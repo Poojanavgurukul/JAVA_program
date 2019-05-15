@@ -6,8 +6,14 @@ public class ParseResult {
     public int toBase;
 
     public ParseResult(String[] args) {
-        this.fromBase=Integer.parseInt(args[1]);
-        this.number=args[2];
+        if (args.length==1){
+            this.number=args[0];
+            this.fromBase=8;
+        }
+        else {
+            this.number = args[2];
+            this.fromBase=Integer.parseInt(args[1]);
+        }
         this.toBase=10;
     }
 }

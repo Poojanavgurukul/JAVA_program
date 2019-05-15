@@ -7,3 +7,5 @@ java BaseConverter --base 8 3 >actual
 diff ExpectedOutputForInput3Base8 actual
 java BaseConverter --base 8 8 >actual
 diff ExpectedOutputForInput8Base8 actual
+java BaseConverter 10 >actual
+diff expectedOutputForDefaultBase8Input10 actual
