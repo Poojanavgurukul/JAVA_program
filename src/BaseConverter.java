@@ -1,18 +1,19 @@
 import com.pooja.baseconverter.Digit;
 import com.pooja.baseconverter.DotProduct;
 import com.pooja.baseconverter.GetPower;
-import static java.lang.Integer.parseInt;
+import com.pooja.baseconverter.ParseResult;
 
 public class BaseConverter {
     public static void main(String[] args) {
-        String number = args[2];
-        int base= parseInt(args[1]);
+        ParseResult parse =new ParseResult(args);
+        String number = parse.number;
+        int base= parse.fromBase;
         int length= number.length();
         if (isNotValid(number,base)) {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= DotProduct.getDotProduct(Digit.getDigits(args[2]), GetPower.getPowers(length,base));
+        int decimal= DotProduct.getDotProduct(Digit.getDigits(parse.number), GetPower.getPowers(length,base));
         System.out.println(decimal);
     }
 
