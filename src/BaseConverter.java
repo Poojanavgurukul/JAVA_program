@@ -13,7 +13,7 @@ public class BaseConverter {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= DotProduct.getDotProduct(Digit.getDigits(parse.number), GetPower.getPowers(length,base));
+        int decimal= DotProduct.getDotProduct(Digit.getDigits(number), GetPower.getPowers(length,base));
         System.out.println(decimal);
     }
 
