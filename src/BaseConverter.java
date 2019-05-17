@@ -1,7 +1,10 @@
-import com.pooja.baseconverter.Digit;
 import com.pooja.baseconverter.DotProduct;
-import com.pooja.baseconverter.GetPower;
+import com.pooja.baseconverter.SumOfDigit;
 import com.pooja.baseconverter.ParseResult;
+import com.pooja.baseconverter.Digit;
+import com.pooja.baseconverter.GetPower;
+
+import java.util.List;
 
 public class BaseConverter {
     public static void main(String[] args) {
@@ -13,8 +16,8 @@ public class BaseConverter {
             System.out.println("number is not valid");
             return;
         }
-        int decimal= DotProduct.getDotProduct(Digit.getDigits(number), GetPower.getPowers(length,base));
-        System.out.println(decimal);
+        List<Integer> decimal= DotProduct.getProduct(Digit.getDigits(number), GetPower.getPowers(length,base));
+        System.out.println(SumOfDigit.getTotal(decimal));
     }
 
     private static boolean isNotValid(String number,int base) {

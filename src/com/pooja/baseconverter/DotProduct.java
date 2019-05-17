@@ -1,14 +1,16 @@
 package com.pooja.baseconverter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DotProduct {
-    public static int getDotProduct(List<Integer> digit, List<Integer> powers){
-        int dotProduct=0,j=0;
+    public static List<Integer> getProduct(List<Integer> digit, List<Integer> powers){
+        ArrayList<Integer>Product=new ArrayList<Integer>();
+        int j=0;
         while(j<digit.size()){
-            dotProduct+=digit.get(j)*powers.get(j);
+            Product.add(digit.get(j)*powers.get(j));
             j++;
         }
-        return dotProduct;
+        return Product;
     }
 }
