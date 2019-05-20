@@ -1,8 +1,4 @@
-import com.pooja.baseconverter.DotProduct;
-import com.pooja.baseconverter.SumOfDigit;
-import com.pooja.baseconverter.ParseResult;
-import com.pooja.baseconverter.Digit;
-import com.pooja.baseconverter.GetPower;
+package baseconverter;
 
 import java.util.List;
 

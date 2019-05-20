@@ -1,4 +1,4 @@
-package com.pooja.baseconverter;
+package baseconverter;
 
 public class ParseResult {
     public int fromBase;
