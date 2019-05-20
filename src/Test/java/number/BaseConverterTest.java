@@ -3,6 +3,7 @@ package number;
 import baseconverter.Digit;
 import baseconverter.DotProduct;
 import baseconverter.GetPower;
+import baseconverter.SumOfDigit;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -24,5 +25,10 @@ public class BaseConverterTest {
         List<Integer>a=Arrays.asList(3,2,1);
         List<Integer>b=Arrays.asList(1,8,64);
         assertEquals(expected, DotProduct.getProduct(a,b));
+    }
+    @Test public void getSum(){
+        int expected=83;
+        List<Integer>productList=Arrays.asList(3,16,64);
+        assertEquals(expected, SumOfDigit.getTotal(productList));
     }
 }
